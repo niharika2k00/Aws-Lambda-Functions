@@ -1,6 +1,6 @@
-# AWS Lambda Testing Purpose
+# AWS-Lambda Testing Purpose
 
-Testing purpose of Lambda Function.
+Testing purpose of Lambda Function , API Gateway , CloudWatch , Layers in AWS.
 
 ## Authors
 
