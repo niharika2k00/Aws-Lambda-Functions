@@ -1,4 +1,4 @@
-# Lambda Testing Purpose
+# AWS Lambda Testing Purpose
 
 Testing purpose of Lambda Function.
 
