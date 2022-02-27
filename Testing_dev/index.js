@@ -1,8 +1,9 @@
-// import AWS from 'aws-sdk';
+
 const AWS = require("aws-sdk");
 const lambda = new AWS.Lambda({ region: "eu-west-1" });
-// import { getUsingQuery } from './helper';
 const { getUsingQuery, getUsingParams } = require("./helper");
+const BASE_URL = "https://c6mnjtr663.execute-api.eu-west-1.amazonaws.com";
+
 
 exports.handler = async (event) => {
   // TODO implement
@@ -42,9 +43,11 @@ exports.handler = async (event) => {
   } catch {
     console.log("Error Spotted");
   }
-  // ====================================================================================
 
-  // ====================================================================================
+
+  // ============================
+  //  /dev/author?name=Henry&city=Switzerland
+  // ============================
   if (event.path?.includes("/author") && event.httpMethod == "GET") {
     try {
       const res = getUsingQuery(event);
@@ -61,9 +64,10 @@ exports.handler = async (event) => {
       return errObj;
     }
   }
-  // ====================================================================================
 
-  // ====================================================================================
+  // =======================
+  //  /dev/id/125485
+  // =======================
   if (event.path?.includes("/id") && event.httpMethod == "GET") {
     try {
       const res = getUsingParams(event);
@@ -80,9 +84,14 @@ exports.handler = async (event) => {
       return errObj;
     }
   }
-  // ====================================================================================
+
+
+
+
   return response;
 };
+
+
 
 /* 
 {
